@@ -19,7 +19,7 @@ index caed342..1c64fc4 100644
 -export PATH="`@(PYTHON_EXECUTABLE) -c \"import os; print(os.pathsep.join([x for x in \\\"$PATH\\\".split(os.pathsep) if not any([d for d in ['cturtle', 'diamondback', 'electric', 'fuerte'] if d in x])]))\"`"
 +export PATH="`/usr/bin/env python -c \"import os; print(os.pathsep.join([x for x in \\\"$PATH\\\".split(os.pathsep) if not any([d for d in ['cturtle', 'diamondback', 'electric', 'fuerte'] if d in x])]))\"`"
  
- if [ -n "$ROS_DISTRO" -a "$ROS_DISTRO" != "indigo" ]; then
+ if [ -n "$ROS_DISTRO" -a "$ROS_DISTRO" != "kinetic" ]; then
    echo "ROS_DISTRO was set to '$ROS_DISTRO' before. Please make sure that the environment does not mix paths from different distributions."
 @@ -30,7 +30,7 @@ for workspace in workspaces:
  print(os.pathsep.join(paths))

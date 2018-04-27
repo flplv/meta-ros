@@ -11,10 +11,10 @@ waypoint_provider executable must be installed.
 I became aware of this issue when creating bitbake recipes for the
 yocs_waypoint_provider package in the OpenEmbedded layer for ROS [1].
 The bitbake tool chain reported the following warnings for the
-yocs_waypoint_provider 0.6.4, shipped in the indigo distribution:
+yocs_waypoint_provider 0.6.4, shipped in the kinetic distribution:
 ```
-WARNING: yocs-waypoint-provider-0.6.4-r0 do_package_qa: QA Issue: /opt/ros/indigo/lib/yocs_waypoint_provider/waypoint_provider contained in package yocs-waypoint-provider requires libwaypoint_provider_lib.so, but no providers found in RDEPENDS_yocs-waypoint-provider? [file-rdeps]
-WARNING: yocs-waypoint-provider-0.6.4-r0 do_package_qa: QA Issue: /opt/ros/indigo/lib/yocs_waypoint_provider/waypoint_provider contained in package yocs-waypoint-provider requires libwaypoint_provider_yaml_parser_lib.so, but no providers found in RDEPENDS_yocs-waypoint-provider? [file-rdeps]
+WARNING: yocs-waypoint-provider-0.6.4-r0 do_package_qa: QA Issue: /opt/ros/kinetic/lib/yocs_waypoint_provider/waypoint_provider contained in package yocs-waypoint-provider requires libwaypoint_provider_lib.so, but no providers found in RDEPENDS_yocs-waypoint-provider? [file-rdeps]
+WARNING: yocs-waypoint-provider-0.6.4-r0 do_package_qa: QA Issue: /opt/ros/kinetic/lib/yocs_waypoint_provider/waypoint_provider contained in package yocs-waypoint-provider requires libwaypoint_provider_yaml_parser_lib.so, but no providers found in RDEPENDS_yocs-waypoint-provider? [file-rdeps]
 ```
 These two warnings pointed out that the two libraries in
 yocs_waypoint_provider were not installed.

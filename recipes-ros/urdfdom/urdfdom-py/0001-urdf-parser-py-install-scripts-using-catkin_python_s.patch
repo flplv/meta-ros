@@ -9,8 +9,8 @@ are adjusted. The package.xml file is needed for the new
 CMakeLists.txt due to using catkin.
 
 The files were obtained from the urdfdom_py release repository at:
-https://github.com/ros-gbp/urdfdom_py-release/tree/5990766f4a164fab8250a384354152737b5acfb7/indigo
-(with the latest commit in the indigo directory being c96421515d974d3110f889a3db615dc622886689)
+https://github.com/ros-gbp/urdfdom_py-release/tree/5990766f4a164fab8250a384354152737b5acfb7/kinetic
+(with the latest commit in the kinetic directory being c96421515d974d3110f889a3db615dc622886689)
 
 The obtained files were slightly adjusted:
   - The version in the package.xml is fixed.

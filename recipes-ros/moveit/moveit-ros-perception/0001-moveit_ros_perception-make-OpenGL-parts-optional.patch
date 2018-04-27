@@ -5,7 +5,7 @@ Subject: [PATCH 1/2] moveit_ros_perception: make OpenGL parts optional
 
 But build everything by default.
 
-Upstream-Status: Inappropriate [WONTFIX for stable indigo-devel branch]
+Upstream-Status: Inappropriate [WONTFIX for stable kinetic-devel branch]
 
 Signed-off-by: Dmitry Rozhkov <dmitry.rozhkov@linux.intel.com>
 ---
