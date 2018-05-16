@@ -39,7 +39,7 @@ do_install_append_class-nativesdk() {
     script=${D}${SDKPATHNATIVE}/environment-setup.d/catkin-runtime.sh
     echo "export ROSDISTRO=${ROSDISTRO}" >> $script
     echo "export PATH=\$PATH:\${OECORE_NATIVE_SYSROOT}/opt/ros/\${ROSDISTRO}/bin" >> $script
-    echo "export PYTHONPATH=\${OECORE_NATIVE_SYSROOT}/opt/ros/\${ROSDISTRO}/lib/python2.7/site-packages" >> $script
+    echo "export PYTHONPATH=\${OECORE_NATIVE_SYSROOT}/opt/ros/\${ROSDISTRO}/lib/python2.7/site-packages:\${OECORE_NATIVE_SYSROOT}/usr/lib/python2.7/site-packages" >> $script
     echo "export ROS_ROOT=\${OECORE_TARGET_SYSROOT}/opt/ros/\${ROSDISTRO}/share/ros" >> $script
     echo "export CMAKE_PREFIX_PATH=\${OECORE_TARGET_SYSROOT}/opt/ros/\${ROSDISTRO}:\${OECORE_NATIVE_SYSROOT}/opt/ros/${ROSDISTRO}" >> $script
 }
