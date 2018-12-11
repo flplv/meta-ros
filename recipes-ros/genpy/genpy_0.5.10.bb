@@ -11,5 +11,7 @@ SRC_URI[sha256sum] = "e4465daffb352b4b45180a6157925b16ab3042996984ad231531134e4d
 
 inherit catkin
 
+BBCLASSEXTEND = "nativesdk"
+
 RDEPENDS_${PN} = "${PYTHON_PN}-math genmsg ${PYTHON_PN}-shell"
 RDEPENDS_${PN}_class-native = ""

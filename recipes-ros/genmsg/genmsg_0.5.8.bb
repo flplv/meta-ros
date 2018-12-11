@@ -8,6 +8,9 @@ SRC_URI[md5sum] = "942b0151a038683254230cfed22dced6"
 SRC_URI[sha256sum] = "d7627a2df169e4e8208347d9215e47c723a015b67ef3ed8cda8b61b6cfbf94d2"
 
 inherit catkin
-
-RDEPENDS_${PN} = "${PYTHON_PN}-stringold ${PYTHON_PN}-pprint"
+BBCLASSEXTEND = "nativesdk"
+FILES_${PN} += "/opt"
+PYTHON_SITEPACKAGES_DIR = "/opt/ros/kinetic/lib/python2.7/site-packages"
+DEPENDS += "catkin"
+RDEPENDS_${PN} += "${PYTHON_PN}-stringold ${PYTHON_PN}-pprint"
 RDEPENDS_${PN}_class-native = ""
