@@ -1,0 +1,26 @@
+From e6922c290593927b90104ca79b68648b2687e550 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Adam=20Skobli=C5=84ski?= <i-adam.skoblinski@aeolusbot.com>
+Date: Wed, 12 Dec 2018 07:58:19 +0800
+Subject: [PATCH] warning
+
+---
+ cmake/templates/pkgConfig.cmake.in | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cmake/templates/pkgConfig.cmake.in b/cmake/templates/pkgConfig.cmake.in
+index 3af5c71..152d1bc 100644
+--- a/cmake/templates/pkgConfig.cmake.in
++++ b/cmake/templates/pkgConfig.cmake.in
+@@ -121,10 +121,10 @@ if(NOT "@PROJECT_CMAKE_CONFIG_INCLUDE_DIRS@ " STREQUAL " ")
+     elseif("${idir} " STREQUAL "@CATKIN_GLOBAL_INCLUDE_DESTINATION@ ")
+       get_filename_component(include "${@PROJECT_NAME@_DIR}/../../../@CATKIN_GLOBAL_INCLUDE_DESTINATION@" ABSOLUTE)
+       if(NOT IS_DIRECTORY ${include})
+-        message(FATAL_ERROR "Project '@PROJECT_NAME@' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer '@PROJECT_MAINTAINER@' to fix it.")
++        message(WARNING "Project '@PROJECT_NAME@' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer '@PROJECT_MAINTAINER@' to fix it.")
+       endif()
+     else()
+-      message(FATAL_ERROR "Project '@PROJECT_NAME@' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '@PKG_INCLUDE_PREFIX@/${idir}'.  Ask the maintainer '@PROJECT_MAINTAINER@' to fix it.")
++      message(WARNING "Project '@PROJECT_NAME@' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '@PKG_INCLUDE_PREFIX@/${idir}'.  Ask the maintainer '@PROJECT_MAINTAINER@' to fix it.")
+     endif()
+     _list_append_unique(@PROJECT_NAME@_INCLUDE_DIRS ${include})
+   endforeach()

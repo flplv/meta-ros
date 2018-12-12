@@ -1,0 +1,22 @@
+From 24c98983d68f0f1d61930dde32f42e8b11601078 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Adam=20Skobli=C5=84ski?= <i-adam.skoblinski@aeolusbot.com>
+Date: Wed, 12 Dec 2018 08:26:00 +0800
+Subject: [PATCH] one more warning
+
+---
+ cmake/templates/pkgConfig.cmake.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/templates/pkgConfig.cmake.in b/cmake/templates/pkgConfig.cmake.in
+index 152d1bc..e4edc69 100644
+--- a/cmake/templates/pkgConfig.cmake.in
++++ b/cmake/templates/pkgConfig.cmake.in
+@@ -113,7 +113,7 @@ if(NOT "@PROJECT_CMAKE_CONFIG_INCLUDE_DIRS@ " STREQUAL " ")
+         PATHS ${idir_path}
+         NO_DEFAULT_PATH ${_find_root_path_both})
+       if(NOT include_dir_path)
+-        message(FATAL_ERROR "Project '@PROJECT_NAME@' specifies '${idir}' as an include dir, which is not found.  It does not exist in any of the root filesystems.  Ask the maintainer '@PROJECT_MAINTAINER@' to fix it.")
++        message(WARNING "Project '@PROJECT_NAME@' specifies '${idir}' as an include dir, which is not found.  It does not exist in any of the root filesystems.  Ask the maintainer '@PROJECT_MAINTAINER@' to fix it.")
+       endif()
+       set(include "${include_dir_path}/${idir_name}")
+     elseif(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})

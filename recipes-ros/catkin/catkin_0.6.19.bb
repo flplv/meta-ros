@@ -1,6 +1,13 @@
 require catkin.inc
 
-SRC_URI += "file://environment.d-catkin.sh"
+SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz \
+           file://0001-use-python-provided-by-environment-instead-of-the-ge.patch \
+           file://0001-allow-proper-cross-compilation-with-catkin.patch \
+           ${@'file://0001-python.cmake-look-for-python3-first.patch' if d.getVar('PYTHON_PN', True) == 'python3' else ''} \
+           file://environment.d-catkin.sh \
+           file://0001-warning.patch \
+           file://0001-one-more-warning.patch \
+           "
 
 DEPENDS_class-native += "catkin-runtime"
 
