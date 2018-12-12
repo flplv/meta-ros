@@ -6,6 +6,4 @@ S = "${WORKDIR}/${ROS_SP}/${ROS_BPN}"
 
 inherit catkin
 
-BBCLASSEXTEND = "nativesdk"
-
 ROS_SPN = "ros_comm_msgs"

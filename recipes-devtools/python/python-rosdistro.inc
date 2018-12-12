@@ -12,4 +12,4 @@ S = "${WORKDIR}/${SRCNAME}-${PV}"
 
 RDEPENDS_${PN} += "${PYTHON_PN}-pyyaml"
 
-BBCLASSEXTEND = "native nativesdk"
+BBCLASSEXTEND = "native"

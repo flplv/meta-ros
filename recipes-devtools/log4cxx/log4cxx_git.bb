@@ -12,4 +12,4 @@ S = "${WORKDIR}/git"
 
 inherit autotools-brokensep pkgconfig
 
-BBCLASSEXTEND += "native nativesdk"
+BBCLASSEXTEND += "native"
