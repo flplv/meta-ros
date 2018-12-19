@@ -11,7 +11,6 @@ do_install_append() {
         # remove sysroot library path from pkgconfig files
         sed -i -e 's#${STAGING_INCDIR}#${includedir}#g' \
                    ${D}${libdir}/pkgconfig/*.pc
-
         # remove sysroot library path from cmake config files
         sed -i -e 's#${STAGING_DIR_TARGET}##g' \
                    ${D}${datadir}/orocos_kdl/*.cmake

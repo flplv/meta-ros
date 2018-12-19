@@ -1,6 +1,6 @@
 SRC_URI = "https://github.com/orocos/${SPN}/archive/v${PV}.tar.gz;downloadfilename=${SPN}-${PV}.tar.gz"
-SRC_URI[md5sum] = "dc927de422cf6afe716ec7b12c0eed11"
-SRC_URI[sha256sum] = "7be2dd5e4f4c1ceac2cdf1f4fae3d94d4ffd9fc1af8d483c05f04e80ef84b3f9"
+SRC_URI[md5sum] = "b1f3ccb1b8fb8023d1cc8d8749a0732d"
+SRC_URI[sha256sum] = "aff361d2b4e2c6d30ae959308a124022eeef5dc5bea2ce779900f9b36b0537bd"
 
 S = "${WORKDIR}/${SPN}-${PV}/${@d.getVar('BPN', True).replace('-', '_')}"
 
