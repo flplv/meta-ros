@@ -1,0 +1,32 @@
+From 26c46dc986875530ebd7b138f57b41cba2c24082 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Adam=20Skobli=C5=84ski?= <i-adam.skoblinski@aeolusbot.com>
+Date: Thu, 3 Jan 2019 09:49:18 +0800
+Subject: [PATCH] add Eigen3 dependency
+
+---
+ CMakeLists.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4019a7d..492035d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,6 +8,11 @@ link_directories(${orocos_kdl_LIBRARY_DIRS})
+ 
+ find_package(PythonInterp REQUIRED)
+ find_package(PythonLibs ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR} REQUIRED)
++
++find_package(Eigen3 REQUIRED)
++include_directories(${EIGEN3_INCLUDE_DIRS})
++link_directories(${EIGEN3_LIBRARY_DIRS})
++
+ execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(plat_specific=True, prefix=''))" OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE)
+ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+ find_package(SIP REQUIRED)
+@@ -21,4 +26,4 @@ set(SIP_EXTRA_OPTIONS "-o")
+ set(PYTHON_SITE_PACKAGES_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/${PYTHON_SITE_PACKAGES})
+ add_sip_python_module(PyKDL PyKDL/PyKDL.sip ${orocos_kdl_LIBRARIES})
+ 
+-install(FILES package.xml DESTINATION share/python_orocos_kdl)
+\ No newline at end of file
++install(FILES package.xml DESTINATION share/python_orocos_kdl)
